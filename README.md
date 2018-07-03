@@ -17,27 +17,73 @@ From github latest (may not be stable)
 
 It also supports the __HideKeyboardFormAccessoryBar__ (boolean) and __KeyboardShrinksView__ (boolean) preferences in config.xml.
 
-#### Quick Example
-- [Methods](#methods)
-    - [Keyboard.shrinkView](#keyboardshrinkview)
-    - [Keyboard.hideFormAccessoryBar](#keyboardhideformaccessorybar)
-    - [Keyboard.disableScrollingInShrinkView](#keyboarddisablescrollinginshrinkview)
-    - [Keyboard.hide](#keyboardhide)
-- [Properties](#properties)
-    - [Keyboard.isVisible](#keyboardisvisible)
-    - [Keyboard.automaticScrollToTopOnHiding](#keyboardautomaticscrolltotoponhiding)
-- [Events](#events)
-    - [keyboardDidShow](#keyboarddidshow)
-    - [keyboardDidHide](#keyboarddidhide)
-    - [keyboardWillShow](#keyboardwillshow)
-    - [keyboardWillHide](#keyboardwillhide)
-    - [keyboardHeightWillChange](#keyboardheightwillchange)
+
+- Android 
+
+## Preferences
+
+### KeyboardResize
+
+> Boolean (true by default)
+
+#### Possible values
+- `true`: Showing/hiding the keyboard will trigger some kind of resizing of the app (see KeyboardResizeMode)
+- `false`: Web will not be resized when the keyboard shows up.
+
+```xml
+<preference name="KeyboardResize" value="true" />
+```
+
+### KeyboardResizeMode
+
+> String ('native' by default)
+
+#### Possible values
+
+- `native`: The whole native webview will be resized when the keyboard shows/hides, it will affect the `vh` relative unit.
+- `body`: Only the html `<body>` element will be resized. Relative units are not affected, because the viewport does not change.
+- `ionic`: Only the html `ion-app` element will be resized. Only for ionic apps.
+
+```xml
+<preference name="KeyboardResizeMode" value="native" />
+```
+
+
+#### IOS Quick Example
+- [Methods IOS](#methodsios)
+    - [Keyboard.shrinkView](#ioskeyboardshrinkview)
+    - [Keyboard.hideFormAccessoryBar](#ioskeyboardhideformaccessorybar)
+    - [Keyboard.disableScrollingInShrinkView](#ioskeyboarddisablescrollinginshrinkview)
+    - [Keyboard.hide](#ioskeyboardhide)
+- [Properties](#iosproperties)
+    - [Keyboard.isVisible](#ioskeyboardisvisible)
+    - [Keyboard.automaticScrollToTopOnHiding](#ioskeyboardautomaticscrolltotoponhiding)
+- [Events](#iosevents)
+    - [keyboardDidShow](#ioskeyboarddidshow)
+    - [keyboardDidHide](#ioskeyboarddidhide)
+    - [keyboardWillShow](#ioskeyboardwillshow)
+    - [keyboardWillHide](#ioskeyboardwillhide)
+    - [keyboardHeightWillChange](#ioskeyboardheightwillchange)
+
+
+#### Android Quick Example
+- [Methods Android](#methodsandroid)
+    - [Keyboard.hideFormAccessoryBar](#androidkeyboardhideformaccessorybar)
+    - [Keyboard.hide](#androidkeyboardhide)
+    - [Keyboard.show](#androidkeyboardshow)
+- [Properties](#androidproperties)
+    - [Keyboard.isVisible](#androidkeyboardisvisible)
+- [Events](#androidevents)
+    - [keyboardDidShow](#androidkeyboarddidshow)
+    - [keyboardDidHide](#androidkeyboarddidhide)
+    - [keyboardWillShow](#androidkeyboardwillshow)
+    - [keyboardWillHide](#androidkeyboardwillhide)
 
 
 
 # Methods IOS
 
-## Keyboard.shrinkView
+## IOS Keyboard.shrinkView
 
 Shrink the WebView when the keyboard comes up.
 
@@ -58,7 +104,7 @@ Set to true to shrink the WebView when the keyboard comes up. The WebView shrink
     Keyboard.shrinkView(false);
     Keyboard.shrinkView(null, function (currentValue) { console.log(currentValue); });
 
-## Keyboard.hideFormAccessoryBar
+## IOS Keyboard.hideFormAccessoryBar
 
 Hide the keyboard toolbar.
 
@@ -79,7 +125,7 @@ Set to true to hide the additional toolbar that is on top of the keyboard. This 
     Keyboard.hideFormAccessoryBar(false);
     Keyboard.hideFormAccessoryBar(null, function (currentValue) { console.log(currentValue); });
 
-## Keyboard.disableScrollingInShrinkView
+## IOS Keyboard.disableScrollingInShrinkView
 
 Disable scrolling when the the WebView is shrunk.
 
@@ -100,7 +146,7 @@ Set to true to disable scrolling when the WebView is shrunk.
     Keyboard.disableScrollingInShrinkView(false);
     Keyboard.disableScrollingInShrinkView(null, function (currentValue) { console.log(currentValue); });
  
-## Keyboard.hide
+## IOS Keyboard.hide
 
 Hide the keyboard
 
@@ -118,7 +164,7 @@ Call this method to hide the keyboard
 
     Keyboard.hide();
 
-# Properties
+# IOS Properties
 
 ## Keyboard.isVisible
 
@@ -155,7 +201,7 @@ after keyboard is hiding.
 
 - iOS
 
-# Events
+# IOS Events
 
 ## keyboardDidShow
 
@@ -244,54 +290,11 @@ Attach handler to this event to be able to receive notification when keyboard is
 - iOS
 
 
-# Supported Platforms
-- Android
-## Preferences
-
-### KeyboardResize
-
-> Boolean (true by default)
-
-#### Possible values
-- `true`: Showing/hiding the keyboard will trigger some kind of resizing of the app (see KeyboardResizeMode)
-- `false`: Web will not be resized when the keyboard shows up.
-
-```xml
-<preference name="KeyboardResize" value="true" />
-```
-
-### KeyboardResizeMode
-
-> String ('native' by default)
-
-#### Possible values
-
-- `native`: The whole native webview will be resized when the keyboard shows/hides, it will affect the `vh` relative unit.
-- `body`: Only the html `<body>` element will be resized. Relative units are not affected, because the viewport does not change.
-- `ionic`: Only the html `ion-app` element will be resized. Only for ionic apps.
-
-```xml
-<preference name="KeyboardResizeMode" value="native" />
-```
-
-#### Quick Example
-- [Methods](#methods)
-    - [Keyboard.hideFormAccessoryBar](#keyboardhideformaccessorybar)
-    - [Keyboard.hide](#keyboardhide)
-    - [Keyboard.show](#keyboardshow)
-- [Properties](#properties)
-    - [Keyboard.isVisible](#keyboardisvisible)
-- [Events](#events)
-    - [keyboardDidShow](#keyboarddidshow)
-    - [keyboardDidHide](#keyboarddidhide)
-    - [keyboardWillShow](#keyboardwillshow)
-    - [keyboardWillHide](#keyboardwillhide)
-
 
 
 # Methods Android
 
-### Keyboard.hideFormAccessoryBar
+## Android Keyboard.hideFormAccessoryBar
 
 > Hide the keyboard toolbar.
 
@@ -330,9 +333,9 @@ Call this method to show the keyboard.
 Keyboard.show();
 ```
 
-## Properties
+## Android Properties
 
-### Keyboard.isVisible
+### Android Keyboard.isVisible
 
 > Determine if the keyboard is visible.
 
@@ -344,9 +347,9 @@ if (Keyboard.isVisible) {
 }
 ```
 
-## Events
+## Android Events
 
-### keyboardDidHide
+### Android keyboardDidHide
 
 > This event is fired when the keyboard is fully closed.
 
@@ -358,7 +361,7 @@ window.addEventListener('keyboardDidHide', () => {
 });
 ```
 
-### keyboardDidShow
+### Android keyboardDidShow
 
 > This event is fired when the keyboard is fully open.
 
@@ -371,7 +374,7 @@ window.addEventListener('keyboardDidShow', (event) => {
 });
 ```
 
-### keyboardWillShow
+### Android keyboardWillShow
 
 > This event fires before keyboard will be shown.
 
@@ -384,7 +387,7 @@ window.addEventListener('keyboardWillShow', (event) => {
 });
 ```
 
-### keyboardWillHide
+### Android keyboardWillHide
 
 > This event is fired when the keyboard is fully closed.
 
