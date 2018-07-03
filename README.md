@@ -203,7 +203,7 @@ after keyboard is hiding.
 
 # IOS Events
 
-## keyboardDidShow
+## IOS keyboardDidShow
 
 This event is fired when keyboard fully shown.
 
@@ -220,7 +220,7 @@ Attach handler to this event to be able to receive notification when keyboard is
 
 - iOS
 
-## keyboardDidHide
+## IOS keyboardDidHide
 
 This event is fired when the keyboard is fully closed.
 
@@ -237,7 +237,7 @@ Attach handler to this event to be able to receive notification when keyboard is
 
 - iOS
 
-## keyboardWillShow
+## IOS keyboardWillShow
 
 This event fires before keyboard will be shown.
 
@@ -254,7 +254,7 @@ Attach handler to this event to be able to receive notification when keyboard is
 
 - iOS
 
-## keyboardWillHide
+## IOS keyboardWillHide
 
 This event is fired when the keyboard is fully closed.
 
@@ -271,7 +271,7 @@ Attach handler to this event to be able to receive notification when keyboard is
 
 - iOS
 
-## keyboardHeightWillChange
+## IOS keyboardHeightWillChange
 
 This event is fired when the keyboard is fully closed.
 
